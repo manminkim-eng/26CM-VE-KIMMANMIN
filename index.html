@@ -1103,25 +1103,58 @@
     line-height: 1;
   }
 
+  /* ========== v1.1 디자인 정비 (2026-11-02) ========== */
+  html { scroll-padding-top: 72px; }
+  .mm-top { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(10,22,40,0.55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid rgba(201,163,92,0.18); transition: background .3s, box-shadow .3s; }
+  .mm-top.scrolled { background: rgba(6,13,26,0.94); box-shadow: 0 2px 16px rgba(0,0,0,0.3); }
+  .mm-top-in { max-width: 1320px; margin: 0 auto; padding: 12px 48px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+  .mm-top-brand { display: flex; flex-direction: column; line-height: 1; text-decoration: none; }
+  .mm-top-brand strong { font-family: var(--serif-kr); font-weight: 500; font-size: 17px; color: var(--ivory); letter-spacing: 0.04em; }
+  .mm-top-brand span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.26em; color: var(--gold-400); margin-top: 5px; }
+  .mm-top-links { display: flex; align-items: center; gap: 22px; font-size: 13px; }
+  .mm-top-links a { color: rgba(248,245,239,0.78); text-decoration: none; padding: 4px 0; border-bottom: 1px solid transparent; transition: color .2s, border-color .2s; }
+  .mm-top-links a:hover { color: var(--gold-300); border-bottom-color: var(--gold-500); }
+  .mm-top-links .mm-top-home { color: var(--gold-400); font-weight: 600; }
+  .hero { padding-top: 120px; }
+  .hero-backdrop { opacity: 0.26; }
+  @media (max-width: 860px) {
+    html { scroll-padding-top: 96px; }
+    .mm-top-in { padding: 10px 24px 0; flex-wrap: wrap; row-gap: 6px; }
+    .mm-top-links { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; white-space: nowrap; gap: 18px; padding: 2px 0 9px; font-size: 12.5px; }
+    .mm-top-links::-webkit-scrollbar { display: none; }
+    .mm-top-home { margin-left: auto; }
+    .mm-top-links { gap: 14px; }
+    .hero { padding-top: 132px; }
+    .hero-top { flex-direction: column; gap: 6px; }
+    .hero-top span:nth-child(2) { display: none; }
+  }
+  .mm-arc { background: #060d1a; color: rgba(248,245,239,0.72); border-top: 1px solid rgba(201,163,92,0.3); font-size: 13px; position: relative; z-index: 2; }
+  .mm-arc-in { max-width: 1320px; margin: 0 auto; padding: 18px 48px; display: flex; align-items: center; gap: 14px 28px; flex-wrap: wrap; }
+  .mm-arc-brand { font-weight: 700; letter-spacing: 0.22em; color: var(--gold-400); text-decoration: none; font-family: var(--mono); }
+  .mm-arc-brand span { color: rgba(248,245,239,0.45); font-weight: 500; }
+  .mm-arc-links { display: flex; flex-wrap: wrap; gap: 6px 18px; flex: 1; }
+  .mm-arc-links a { color: rgba(248,245,239,0.72); text-decoration: none; padding: 2px 0; border-bottom: 1px solid transparent; }
+  .mm-arc-links a:hover { color: var(--gold-300); border-bottom-color: var(--gold-500); }
+  .mm-arc-links a.on { color: var(--gold-300); font-weight: 600; }
+  .mm-arc-ver { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: rgba(248,245,239,0.45); }
+  @media (max-width: 768px) { .mm-arc-in { padding: 18px 24px; } .mm-arc-brand { width: 100%; } }
+  @media print { .mm-top, .mm-arc { display: none !important; } .hero { padding-top: 80px; } }
 </style>
 </head>
 <body>
 
-<!-- ========================= 00 INTRO POSTER ========================= -->
-<section class="intro" id="intro">
-  <div class="intro-inner">
-    <div class="intro-eyebrow">Architect Kim Manmin · CM / VE Portfolio</div>
-    <p class="intro-caption">
-      31년 7개월 현장 실무 · 건축사 + 국제공인 VE전문가(CVS)<br/>
-      <b>건설사업관리 10건 · 가치공학 20건 · 1,336일</b>
-    </p>
-    <a class="intro-scroll" href="#hero-anchor" aria-label="포트폴리오 보기">
-      <span>SCROLL</span>
-      <span class="intro-scroll-line"></span>
-    </a>
-  </div>
-</section>
 
+
+<!-- v1.1 (2026-11-02) 상단 메뉴 — 건축 포트폴리오와 같은 구성 -->
+<nav class="mm-top" id="mmTop">
+  <div class="mm-top-in">
+    <a class="mm-top-brand" href="#hero-anchor"><strong>김만민 건축사</strong><span>CM · VE ARCHIVE</span></a>
+    <div class="mm-top-links">
+      <a href="#quals">자격</a><a href="#cm">건설사업관리</a><a href="#ve">가치공학</a><a href="#why">강점</a><a href="#contact">문의</a>
+      <a class="mm-top-home" href="https://manminkim-eng.github.io/KIMMANMIN/" title="MANMIN 홈페이지">MANMIN 홈 ↗</a>
+    </div>
+  </div>
+</nav>
 
 <!-- ========================= HERO ========================= -->
 <header class="hero" id="hero-anchor">
@@ -1176,7 +1209,7 @@
 </header>
 
 <!-- ========================= 01 QUALIFICATIONS ========================= -->
-<section class="quals-bg">
+<section class="quals-bg" id="quals">
   <div class="wrap">
     <div class="sec-hd reveal">
       <div class="num">01</div>
@@ -1228,7 +1261,7 @@
 </section>
 
 <!-- ========================= 02 CM PROJECTS ========================= -->
-<section>
+<section id="cm">
   <div class="wrap">
     <div class="sec-hd reveal">
       <div class="num">02</div>
@@ -1444,7 +1477,7 @@
 </section>
 
 <!-- ========================= 03 VE PROJECTS ========================= -->
-<section class="ve-bg">
+<section class="ve-bg" id="ve">
   <div class="wrap">
     <div class="sec-hd reveal">
       <div class="num">03</div>
@@ -1570,7 +1603,7 @@
 </section>
 
 <!-- ========================= 04 WHY ========================= -->
-<section class="why-bg">
+<section class="why-bg" id="why">
   <div class="wrap">
     <div class="sec-hd reveal">
       <div class="num">04</div>
@@ -1633,7 +1666,7 @@
 </section>
 
 <!-- ========================= 05 CONTACT ========================= -->
-<section class="contact-bg">
+<section class="contact-bg" id="contact">
   <div class="wrap">
     <div class="contact-grid">
 
@@ -1675,11 +1708,25 @@
   </div>
 </section>
 
+<!-- MANMIN 아카이브 공통 띠 (2026-11-02 · 건축 포트폴리오와 같은 구성) -->
+<nav class="mm-arc" aria-label="MANMIN 아카이브">
+  <div class="mm-arc-in">
+    <a class="mm-arc-brand" href="https://manminkim-eng.github.io/KIMMANMIN/">MANMIN <span>ARCHIVE</span></a>
+    <div class="mm-arc-links">
+      <a href="https://manminkim-eng.github.io/KIMMANMIN-portfolio/">건축 포트폴리오</a>
+      <a class="on" href="https://manminkim-eng.github.io/26CM-VE-KIMMANMIN/" aria-current="page">건설사업관리 · 가치공학</a>
+      <a href="https://manminkim-eng.github.io/career/">경력 대시보드</a>
+      <a href="https://manminkim-eng.github.io/KIMMANMIN/">홈페이지 ↗</a>
+    </div>
+    <div class="mm-arc-ver">건설사업관리 · 가치공학 · Ver 1.1 · 2026-11-02</div>
+  </div>
+</nav>
+
 <!-- ========================= FOOTER ========================= -->
 <footer>
   <div class="wrap foot">
     <div>© 2026 <span class="g">KIM MANMIN</span> · Architect &amp; CVS</div>
-    <div>CM · VE Portfolio · Ver 1.0</div>
+    <div>CM · VE Portfolio · Ver 1.1 · 2026-11-02</div>
   </div>
 </footer>
 
@@ -1696,5 +1743,11 @@
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 </script>
 
+<script>
+  /* v1.1 상단 메뉴 — 스크롤하면 바탕 진하게 */
+  (function(){ var t = document.getElementById('mmTop'); if(!t) return;
+    function f(){ t.classList.toggle('scrolled', window.scrollY > 40); }
+    window.addEventListener('scroll', f, {passive:true}); f(); })();
+</script>
 </body>
 </html>
