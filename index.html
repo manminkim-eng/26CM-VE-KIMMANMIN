@@ -1135,7 +1135,7 @@
   .mm-arc-links { display: flex; flex-wrap: wrap; gap: 6px 18px; flex: 1; }
   .mm-arc-links a { color: rgba(248,245,239,0.72); text-decoration: none; padding: 2px 0; border-bottom: 1px solid transparent; }
   .mm-arc-links a:hover { color: var(--gold-300); border-bottom-color: var(--gold-500); }
-  .mm-arc-links a.on { color: var(--gold-300); font-weight: 600; }
+  .mm-arc-links .on { color: var(--gold-300); font-weight: 600; padding: 2px 0; }
   .mm-arc-ver { font-family: var(--mono); font-size: 11px; letter-spacing: 0.08em; color: rgba(248,245,239,0.45); }
   @media (max-width: 768px) { .mm-arc-in { padding: 18px 24px; } .mm-arc-brand { width: 100%; } }
   @media print { .mm-top, .mm-arc { display: none !important; } .hero { padding-top: 80px; } }
@@ -1734,14 +1734,13 @@
 <!-- MANMIN 아카이브 공통 띠 (2026-11-02 · 건축 포트폴리오와 같은 구성) -->
 <nav class="mm-arc" aria-label="MANMIN 아카이브">
   <div class="mm-arc-in">
-    <a class="mm-arc-brand" href="https://manminkim-eng.github.io/KIMMANMIN/">MANMIN <span>ARCHIVE</span></a>
+    <span class="mm-arc-brand">MANMIN <span>ARCHIVE</span></span>
     <div class="mm-arc-links">
       <a href="https://manminkim-eng.github.io/KIMMANMIN-portfolio/">건축 포트폴리오</a>
-      <a class="on" href="https://manminkim-eng.github.io/26CM-VE-KIMMANMIN/" aria-current="page">건설사업관리 · 가치공학</a>
+      <span class="on" aria-current="page">건설사업관리 · 가치공학</span>
       <a href="https://manminkim-eng.github.io/career/">경력 대시보드</a>
-      <a href="https://manminkim-eng.github.io/KIMMANMIN/">홈페이지 ↗</a>
     </div>
-    <div class="mm-arc-ver">건설사업관리 · 가치공학 · Ver 1.1.2 · 2026-11-02</div>
+    <div class="mm-arc-ver">건설사업관리 · 가치공학 · Ver 1.1.3 · 2026-11-02</div>
   </div>
 </nav>
 
@@ -1749,7 +1748,7 @@
 <footer>
   <div class="wrap foot">
     <div>© 2026 <span class="g">KIM MANMIN</span> · Architect &amp; CVS</div>
-    <div>CM · VE Portfolio · Ver 1.1.2 · 2026-11-02</div>
+    <div>CM · VE Portfolio · Ver 1.1.3 · 2026-11-02</div>
   </div>
 </footer>
 
